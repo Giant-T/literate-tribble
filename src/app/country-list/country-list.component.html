@@ -1,4 +1,19 @@
 <h1>Liste des pays</h1>
 <mat-accordion>
-    <app-country-info *ngFor="let country of countries" [country]="country"></app-country-info>
+  <app-country-info
+    *ngFor="
+      let country of countries
+        | slice: pageSize * pageIndex:pageSize * (pageIndex + 1)
+    "
+    [country]="country"
+  ></app-country-info>
 </mat-accordion>
+<mat-paginator
+  [length]="countries.length"
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="handlePageEvent($event)"
+  showFirstLastButtons="true"
+>
+</mat-paginator>

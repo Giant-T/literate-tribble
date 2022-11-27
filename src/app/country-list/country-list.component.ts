@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { Country } from '../country';
 import { CountryService } from '../country.service';
 
@@ -10,6 +11,11 @@ import { CountryService } from '../country.service';
 export class CountryListComponent {
   countries: Country[] = [];
 
+  // Variable pour le paginator
+  pageSize: number = 10;
+  pageIndex: number = 0;
+  pageSizeOptions: number[] = [5, 10, 20];
+
   constructor(private countryService: CountryService) {}
 
   ngOnInit(): void {
@@ -17,8 +23,13 @@ export class CountryListComponent {
   }
 
   getCountries(): void {
-    this.countryService
-      .getCountries()
-      .subscribe((result) => (this.countries = result));
+    this.countryService.getCountries().subscribe((result) => {
+      this.countries = result;
+    });
+  }
+
+  handlePageEvent(e: PageEvent): void {
+    this.pageSize = e.pageSize;
+    this.pageIndex = e.pageIndex;
   }
 }

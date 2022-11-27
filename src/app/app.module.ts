@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,12 @@ import { CountryService } from './country.service';
 import { CountryInfoComponent } from './country-info/country-info.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, CountryListComponent, CountryInfoComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    CountryListComponent,
+    CountryInfoComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,6 +35,7 @@ import { CountryInfoComponent } from './country-info/country-info.component';
     MatIconModule,
     MatExpansionModule,
     MatDividerModule,
+    MatPaginatorModule,
   ],
   providers: [CountryService],
   bootstrap: [AppComponent],
