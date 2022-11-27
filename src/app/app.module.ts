@@ -9,6 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,6 +38,8 @@ import { CountryInfoComponent } from './country-info/country-info.component';
     MatExpansionModule,
     MatDividerModule,
     MatPaginatorModule,
+    MatSidenavModule,
+    MatListModule,
   ],
   providers: [CountryService],
   bootstrap: [AppComponent],
