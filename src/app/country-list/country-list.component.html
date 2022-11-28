@@ -1,8 +1,18 @@
 <h1>Liste des pays</h1>
+<mat-form-field appearance="outline">
+  <input
+    matInput
+    type="search"
+    [(ngModel)]="searchTerm"
+    (ngModelChange)="getFilteredList()"
+    placeholder="Rechercher"
+  />
+  <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
 <mat-accordion>
   <app-country-info
     *ngFor="
-      let country of countries
+      let country of filteredList
         | slice: pageSize * pageIndex:pageSize * (pageIndex + 1)
     "
     [country]="country"

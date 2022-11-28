@@ -9,6 +9,8 @@ import { CountryService } from '../country.service';
   styleUrls: ['./country-list.component.css'],
 })
 export class CountryListComponent {
+  searchTerm: string = '';
+  filteredList: Country[] = [];
   countries: Country[] = [];
 
   // Variable pour le paginator
@@ -25,11 +27,18 @@ export class CountryListComponent {
   getCountries(): void {
     this.countryService.getCountries().subscribe((result) => {
       this.countries = result;
+      this.getFilteredList();
     });
   }
 
   handlePageEvent(e: PageEvent): void {
     this.pageSize = e.pageSize;
     this.pageIndex = e.pageIndex;
+  }
+
+  getFilteredList(): void {
+    this.filteredList = this.countries.filter((c) =>
+      c.name.toUpperCase().startsWith(this.searchTerm.toUpperCase())
+    );
   }
 }

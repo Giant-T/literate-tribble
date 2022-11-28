@@ -12,5 +12,12 @@ body {
 .flex {
   display: flex;
   flex-direction: row;
+}
+
+.center {
   align-items: center;
+}
+
+.flex > * {
+  padding: 0.5em;
 }
