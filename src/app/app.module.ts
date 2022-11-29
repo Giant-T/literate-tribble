@@ -14,6 +14,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import { CountryService } from './country.service';
 import { CountryInfoComponent } from './country-info/country-info.component';
+import { LeaderService } from './leader.service';
+import { CountryAddformComponent } from './country-addform/country-addform.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { CountryInfoComponent } from './country-info/country-info.component';
     NavbarComponent,
     CountryListComponent,
     CountryInfoComponent,
+    CountryAddformComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,8 +50,9 @@ import { CountryInfoComponent } from './country-info/country-info.component';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatProgressBarModule,
   ],
-  providers: [CountryService],
+  providers: [CountryService, LeaderService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

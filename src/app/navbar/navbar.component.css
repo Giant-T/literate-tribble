@@ -6,6 +6,14 @@ mat-sidenav {
   padding: 0 1em;
 }
 
-a.no-decoration {
+mat-nav-list > a {
+  width: 100%;
   text-decoration: none;
+  text-align: left;
+}
+
+mat-nav-list a * {
+  margin-left: 0.5em;
+  position: absolute;
+  left: 0px;
 }

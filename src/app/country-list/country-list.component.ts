@@ -38,7 +38,7 @@ export class CountryListComponent {
 
   getFilteredList(): void {
     this.filteredList = this.countries.filter((c) =>
-      c.name.toUpperCase().startsWith(this.searchTerm.toUpperCase())
+      c.name.toUpperCase().match(this.searchTerm.toUpperCase())
     );
   }
 }

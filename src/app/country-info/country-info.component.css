@@ -1,0 +1,4 @@
+.mat-expansion-panel-header-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

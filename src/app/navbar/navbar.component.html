@@ -1,15 +1,28 @@
 <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav>
-    <div class="flex center">
-      <button mat-icon-button (click)="sidenav.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <h3>Literate Tribble</h3>
-    </div>
-    <a mat-button routerLink="/home" class="no-decoration">
-      <mat-icon>home</mat-icon>
-      Accueil
-    </a>
+    <mat-nav-list>
+      <div class="flex center">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <h3>Literate Tribble</h3>
+      </div>
+    </mat-nav-list>
+    <mat-nav-list>
+      <mat-divider></mat-divider>
+    </mat-nav-list>
+    <mat-nav-list (click)="sidenav.toggle()">
+      <a mat-button routerLink="/home">
+        <mat-icon>home</mat-icon>
+        Accueil
+      </a>
+    </mat-nav-list>
+    <mat-nav-list (click)="sidenav.toggle()">
+      <a mat-button routerLink="/add">
+        <mat-icon>description</mat-icon>
+        Ajout de pays
+      </a>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="fixed" color="primary">

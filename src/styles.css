@@ -21,3 +21,7 @@ body {
 .flex > * {
   padding: 0.5em;
 }
+
+.mat-mdc-paginator-range-label {
+  white-space: nowrap;
+}

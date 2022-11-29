@@ -14,4 +14,8 @@ export class CountryService {
   getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(this.apiUrl);
   }
+
+  insertCountrie(country: Country): Observable<{ id: number }> {
+    return this.http.post<{ id: number }>(this.apiUrl, country);
+  }
 }
