@@ -15,6 +15,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { CountryService } from './country.service';
 import { CountryInfoComponent } from './country-info/country-info.component';
 import { LeaderService } from './leader.service';
 import { CountryAddformComponent } from './country-addform/country-addform.component';
+import { CoordsPipe } from './coords.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { CountryAddformComponent } from './country-addform/country-addform.compo
     CountryListComponent,
     CountryInfoComponent,
     CountryAddformComponent,
+    CoordsPipe,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { CountryAddformComponent } from './country-addform/country-addform.compo
     MatFormFieldModule,
     MatInputModule,
     MatProgressBarModule,
+    MatChipsModule,
   ],
   providers: [CountryService, LeaderService],
   bootstrap: [AppComponent],

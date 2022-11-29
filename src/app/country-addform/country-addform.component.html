@@ -1,1 +1,33 @@
-<p>country-addform works!</p>
+<h1>Formulaire d'ajout de pays</h1>
+<form (ngSubmit)="insertCountry()">
+    <mat-form-field appearance="outline" class="half-input">
+        <mat-label>Nom</mat-label>
+        <input matInput required name="name" [(ngModel)]="country.name" type="text" placeholder="Nom du pays" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="half-input">
+        <mat-label>Code</mat-label>
+        <input matInput required name="code" [(ngModel)]="country.code" type="text" placeholder="Code du pays" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="half-input">
+        <mat-label>Superficie</mat-label>
+        <input matInput required name="area" [(ngModel)]="country.area" type="number" min="0"
+            placeholder="Superficie du pays" />
+        <span matTextSuffix>km²</span>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="half-input">
+        <mat-label>Langues</mat-label>
+        <mat-chip-grid #languagesGrid>
+            <mat-chip-row *ngFor="let language of country.languages; let i = index" (removed)="removeLanguage(i)">
+                {{language}}
+                <button matChipRemove aria-label="'remove' + language">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </mat-chip-row>
+            <input required name="languages" placeholder="Nouvelle langue..." [matChipInputFor]="languagesGrid"
+                (matChipInputTokenEnd)="addLanguage($event)" />
+        </mat-chip-grid>
+    </mat-form-field>
+</form>
