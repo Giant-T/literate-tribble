@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule } from '@angular/forms';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 // Angular Material imports
 import { MatButtonModule } from '@angular/material/button';
@@ -14,8 +15,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,10 +55,12 @@ import { CoordsPipe } from './coords.pipe';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatProgressBarModule,
+    MatStepperModule,
     MatChipsModule,
+    GoogleMapsModule,
+    MatSelectModule,
   ],
-  providers: [CountryService, LeaderService],
+  providers: [CountryService, LeaderService, FormBuilder],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -5,13 +5,20 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CoordsPipe implements PipeTransform {
   transform(coords: { lat: number; lng: number }): string {
-    let latString: string = `${Math.floor(Math.abs(coords.lat)).toString()}°${
-      coords.lat < 0 ? 'S' : 'N'
-    }`;
-    let lngString: string = `${Math.floor(Math.abs(coords.lng)).toString()}°${
-      coords.lng < 0 ? 'O' : 'E'
-    }`;
+    let latString: string = this.formatNumber(coords.lat, 'S', 'N');
+    let lngString: string = this.formatNumber(coords.lng, 'O', 'E');
 
     return `${latString}, ${lngString}`;
+  }
+
+  private formatNumber(
+    number: number,
+    lowerLetter: string,
+    upperLetter: string
+  ): string {
+    return `${Math.floor(Math.abs(number)).toString()}°${
+      number < 0 ? lowerLetter : upperLetter
+    }
+    `;
   }
 }

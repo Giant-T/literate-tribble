@@ -1,33 +1,102 @@
 <h1>Formulaire d'ajout de pays</h1>
-<form (ngSubmit)="insertCountry()">
-    <mat-form-field appearance="outline" class="half-input">
-        <mat-label>Nom</mat-label>
-        <input matInput required name="name" [(ngModel)]="country.name" type="text" placeholder="Nom du pays" />
-    </mat-form-field>
 
-    <mat-form-field appearance="outline" class="half-input">
-        <mat-label>Code</mat-label>
-        <input matInput required name="code" [(ngModel)]="country.code" type="text" placeholder="Code du pays" />
-    </mat-form-field>
+<!-- <mat-stepper linear #stepper>
+  <mat-step>
 
-    <mat-form-field appearance="outline" class="half-input">
-        <mat-label>Superficie</mat-label>
-        <input matInput required name="area" [(ngModel)]="country.area" type="number" min="0"
-            placeholder="Superficie du pays" />
-        <span matTextSuffix>km²</span>
-    </mat-form-field>
+  </mat-step>
+  
+</mat-stepper> -->
+<h2>Pays</h2>
+<mat-form-field appearance="outline" class="half-input">
+  <mat-label>Nom</mat-label>
+  <input
+    matInput
+    required
+    name="name"
+    [(ngModel)]="country.name"
+    type="text"
+    placeholder="Nom du pays"
+  />
+</mat-form-field>
 
-    <mat-form-field appearance="outline" class="half-input">
-        <mat-label>Langues</mat-label>
-        <mat-chip-grid #languagesGrid>
-            <mat-chip-row *ngFor="let language of country.languages; let i = index" (removed)="removeLanguage(i)">
-                {{language}}
-                <button matChipRemove aria-label="'remove' + language">
-                    <mat-icon>cancel</mat-icon>
-                </button>
-            </mat-chip-row>
-            <input required name="languages" placeholder="Nouvelle langue..." [matChipInputFor]="languagesGrid"
-                (matChipInputTokenEnd)="addLanguage($event)" />
-        </mat-chip-grid>
-    </mat-form-field>
-</form>
+<mat-form-field appearance="outline" class="half-input">
+  <mat-label>Code</mat-label>
+  <input
+    matInput
+    required
+    name="code"
+    [(ngModel)]="country.code"
+    type="text"
+    placeholder="Code du pays"
+  />
+</mat-form-field>
+
+<mat-form-field appearance="outline" class="half-input">
+  <mat-label>Superficie</mat-label>
+  <input
+    matInput
+    required
+    name="area"
+    [(ngModel)]="country.area"
+    type="number"
+    min="0"
+    placeholder="Superficie du pays"
+  />
+  <span matTextSuffix>km²</span>
+</mat-form-field>
+
+<mat-form-field appearance="outline" class="half-input">
+  <mat-label>Langues</mat-label>
+  <mat-chip-grid #languagesGrid>
+    <mat-chip-row
+      *ngFor="let language of country.languages; let i = index"
+      (removed)="removeLanguage(i)"
+    >
+      {{ language }}
+      <button matChipRemove aria-label="'remove' + language">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip-row>
+    <input
+      required
+      name="languages"
+      placeholder="Nouvelle langue..."
+      [matChipInputFor]="languagesGrid"
+      (matChipInputTokenEnd)="addLanguage($event)"
+    />
+  </mat-chip-grid>
+</mat-form-field>
+
+<mat-form-field appearance="outline">
+  <mat-label>Continent</mat-label>
+  <mat-select required name="continent" [(ngModel)]="country.continent">
+    <mat-option *ngFor="let continent of continents" [value]="continent">
+      {{ continent }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-divider></mat-divider>
+<h2>Capitale</h2>
+
+<mat-form-field appearance="outline" class="half-input">
+  <mat-label>Nom</mat-label>
+  <input
+    matInput
+    required
+    name="capitalName"
+    [(ngModel)]="country.capital.name"
+    type="text"
+    placeholder="Nom de la capitale"
+  />
+</mat-form-field>
+
+<h4>Coordonnées: {{ country.capital.coords | coords }}</h4>
+<ng-template ngIf="mapLoaded | async">
+  <google-map [zoom]="1" (mapClick)="mapClick($event)">
+    <map-marker
+      [position]="country.capital.coords"
+      label="capitale"
+    ></map-marker>
+  </google-map>
+</ng-template>
