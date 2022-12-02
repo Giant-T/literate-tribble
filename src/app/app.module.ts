@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormBuilder, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormsModule } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps';
 
 // Angular Material imports
@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -59,6 +60,8 @@ import { CoordsPipe } from './coords.pipe';
     MatChipsModule,
     GoogleMapsModule,
     MatSelectModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
   ],
   providers: [CountryService, LeaderService, FormBuilder],
   bootstrap: [AppComponent],

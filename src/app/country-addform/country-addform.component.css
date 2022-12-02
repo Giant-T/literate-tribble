@@ -1,7 +1,8 @@
-.full-input {
-  width: 100%;
+.mat-stepper-horizontal {
+  margin-top: 8px;
 }
 
-.half-input {
-  width: 50%;
+.mat-mdc-form-field {
+  margin-top: 16px;
+  margin-right: 0.5em;
 }
