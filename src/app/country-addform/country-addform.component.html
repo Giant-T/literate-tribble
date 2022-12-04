@@ -71,7 +71,9 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-checkbox formControlName="isNato">Fait partie de l'OTAN</mat-checkbox>
+      <mat-checkbox formControlName="isNato">
+        Fait partie de l'OTAN
+      </mat-checkbox>
 
       <div>
         <button mat-button matStepperNext>Prochaine étape</button>
@@ -85,7 +87,7 @@
     label="Entrez les informations de la capitale"
   >
     <form [formGroup]="capitalFormGroup">
-      <mat-form-field appearance="outline" class="half-input">
+      <mat-form-field appearance="outline">
         <mat-label>Nom</mat-label>
         <input
           matInput
@@ -96,7 +98,10 @@
         />
       </mat-form-field>
 
-      <h4>Coordonnées (cliquez sur la carte pour changer la position): {{ coords | coords }}</h4>
+      <h4>
+        Coordonnées (cliquez sur la carte pour changer la position):
+        {{ coords | coords }}
+      </h4>
       <ng-template ngIf="mapLoaded | async">
         <google-map [zoom]="1" (mapClick)="mapClick($event)">
           <map-marker [position]="coords" label="capitale"></map-marker>
@@ -105,7 +110,7 @@
 
       <div>
         <button mat-button matStepperPrevious>Retour</button>
-        <button mat-button matStepperNext>Prochaine étape</button>
+        <button mat-button (click)="insertCountry()">Soumettre</button>
       </div>
     </form>
   </mat-step>
