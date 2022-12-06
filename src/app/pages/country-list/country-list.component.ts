@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { Country } from '../country';
-import { CountryService } from '../country.service';
+import { Country } from '../../models/country';
+import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-country-list',

@@ -1,0 +1,18 @@
+mat-card {
+  position: absolute;
+  left: 12.5%;
+  width: 75%;
+  margin-top: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 992px) {
+  mat-card {
+    width: 100%;
+    left: 0%;
+  }
+}

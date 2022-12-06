@@ -17,3 +17,12 @@ mat-nav-list a * {
   position: absolute;
   left: 0px;
 }
+
+a {
+  width: 100%;
+  text-decoration: none;
+}
+
+mat-menu {
+  padding: 0.5em;
+}

@@ -19,17 +19,22 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './navbar/navbar.component';
-import { CountryListComponent } from './country-list/country-list.component';
-import { CountryService } from './country.service';
-import { CountryInfoComponent } from './country-info/country-info.component';
-import { LeaderService } from './leader.service';
-import { CountryAddformComponent } from './country-addform/country-addform.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CountryListComponent } from './pages/country-list/country-list.component';
+import { CountryService } from './services/country.service';
+import { CountryInfoComponent } from './components/country-info/country-info.component';
+import { LeaderService } from './services/leader.service';
+import { CountryAddformComponent } from './pages/country-addform/country-addform.component';
 import { CoordsPipe } from './coords.pipe';
+import { AuthService } from './services/auth.service';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +44,8 @@ import { CoordsPipe } from './coords.pipe';
     CountryInfoComponent,
     CountryAddformComponent,
     CoordsPipe,
+    SigninComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,8 +69,10 @@ import { CoordsPipe } from './coords.pipe';
     MatSelectModule,
     ReactiveFormsModule,
     MatCheckboxModule,
+    MatCardModule,
+    MatMenuModule,
   ],
-  providers: [CountryService, LeaderService, FormBuilder],
+  providers: [CountryService, LeaderService, FormBuilder, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
