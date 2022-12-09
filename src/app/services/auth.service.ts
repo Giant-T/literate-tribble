@@ -65,7 +65,7 @@ export class AuthService {
   getToken(): string | null {
     let token: string | null = localStorage.getItem('id_token');
 
-    if (this.isAuthenticated()) return null;
+    if (!this.isAuthenticated()) return null;
 
     return token;
   }

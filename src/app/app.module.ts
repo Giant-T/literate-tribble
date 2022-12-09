@@ -36,6 +36,7 @@ import { AuthService } from './services/auth.service';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AuthorizedDisplayComponent } from './components/authorized-display/authorized-display.component';
+import { UserGuard } from './guards/user-guard';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,13 @@ import { AuthorizedDisplayComponent } from './components/authorized-display/auth
     MatCardModule,
     MatMenuModule,
   ],
-  providers: [CountryService, LeaderService, FormBuilder, AuthService],
+  providers: [
+    CountryService,
+    LeaderService,
+    FormBuilder,
+    AuthService,
+    UserGuard,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

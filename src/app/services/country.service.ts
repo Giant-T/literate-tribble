@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Country } from '../models/country';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,13 +10,17 @@ import { Country } from '../models/country';
 export class CountryService {
   private apiUrl: string = 'https://localhost:7033/api/countries';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService: AuthService) {}
 
   getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(this.apiUrl);
   }
 
   insertCountry(country: Country): Observable<{ id: number }> {
-    return this.http.post<{ id: number }>(this.apiUrl, country);
+    return this.http.post<{ id: number }>(this.apiUrl, country, {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${this.authService.getToken()}`,
+      }),
+    });
   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { UserGuard } from './guards/user-guard';
 import { CountryAddformComponent } from './pages/country-addform/country-addform.component';
 import { CountryListComponent } from './pages/country-list/country-list.component';
 import { SigninComponent } from './pages/signin/signin.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {
     path: 'add',
     component: CountryAddformComponent,
+    canActivate: [UserGuard],
   },
   {
     path: 'sign-in',
