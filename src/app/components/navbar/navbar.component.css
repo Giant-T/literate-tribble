@@ -23,6 +23,11 @@ a {
   text-decoration: none;
 }
 
+button {
+  height: 36px;
+  width: 100%;
+}
+
 mat-menu {
   padding: 0.5em;
 }

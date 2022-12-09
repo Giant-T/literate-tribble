@@ -35,6 +35,7 @@ import { CoordsPipe } from './coords.pipe';
 import { AuthService } from './services/auth.service';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AuthorizedDisplayComponent } from './components/authorized-display/authorized-display.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { SignupComponent } from './pages/signup/signup.component';
     CoordsPipe,
     SigninComponent,
     SignupComponent,
+    AuthorizedDisplayComponent,
   ],
   imports: [
     BrowserModule,

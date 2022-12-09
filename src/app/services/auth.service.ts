@@ -62,12 +62,22 @@ export class AuthService {
     localStorage.setItem('id_token', token.token);
   }
 
-  public get getToken(): string | null {
+  getToken(): string | null {
     let token: string | null = localStorage.getItem('id_token');
-    let expiration: string | null = localStorage.getItem('expiration');
 
-    if (expiration != null && dayjs(expiration) > dayjs()) return null;
+    if (this.isAuthenticated()) return null;
 
     return token;
+  }
+
+  disconnect(): void {
+    localStorage.removeItem('expiration');
+    localStorage.removeItem('id_token');
+  }
+
+  isAuthenticated(): boolean {
+    const expiration = dayjs(localStorage.getItem('expiration'));
+
+    return dayjs().isBefore(expiration);
   }
 }

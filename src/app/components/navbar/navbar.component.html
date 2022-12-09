@@ -17,12 +17,14 @@
         Accueil
       </a>
     </mat-nav-list>
-    <mat-nav-list (click)="sidenav.toggle()">
-      <a mat-button routerLink="/add">
-        <mat-icon>description</mat-icon>
-        Ajout de pays
-      </a>
-    </mat-nav-list>
+    <app-authorized-display>
+      <mat-nav-list (click)="sidenav.toggle()">
+        <a mat-button routerLink="/add">
+          <mat-icon>description</mat-icon>
+          Ajout de pays
+        </a>
+      </mat-nav-list>
+    </app-authorized-display>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar class="fixed" color="primary">
@@ -36,8 +38,13 @@
           <mat-icon>account_circle</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <a mat-button routerLink="sign-in">Connexion</a>
-          <a mat-button routerLink="sign-up">Inscription</a>
+          <app-authorized-display [hideWhenAuthenticated]="true">
+            <a mat-button routerLink="sign-in">Connexion</a>
+            <a mat-button routerLink="sign-up">Inscription</a>
+          </app-authorized-display>
+          <app-authorized-display>
+            <button mat-button (click)="disconnect()">Déconnexion</button>
+          </app-authorized-display>
         </mat-menu>
       </mat-toolbar-row>
     </mat-toolbar>
