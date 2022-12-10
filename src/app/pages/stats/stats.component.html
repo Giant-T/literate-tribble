@@ -1,14 +1,31 @@
-<h2>Nombre de pays par continent</h2>
+<h2>Statistiques</h2>
+
+<h3>Nombre de pays par continent</h3>
 <ngx-charts-bar-vertical
-    [results]="countriesPerContinent"
-    [view]="[1000,400]"
-    [xAxis]="true"
-    [showXAxisLabel]="true"
-    [xAxisLabel]="'Continent'"
-    [yAxis]="true"
-    [showYAxisLabel]="true"
-    [yAxisLabel]="'Nombre de pays'"
-    [legend]="true"
-    [legendTitle]="'Pays par continent'"
+  [results]="countriesPerContinent"
+  [view]="[1000, 400]"
+  [xAxis]="true"
+  [showXAxisLabel]="true"
+  [xAxisLabel]="'Continent'"
+  [yAxis]="true"
+  [showYAxisLabel]="true"
+  [yAxisLabel]="'Nombre de pays'"
+  [legend]="true"
+  [legendTitle]="'Pays par continent'"
+>
+</ngx-charts-bar-vertical>
+
+<h3>Nombre de pays par nombre de langues</h3>
+<ngx-charts-bar-vertical
+  [results]="countriesPerLanguages"
+  [view]="[1000, 400]"
+  [xAxis]="true"
+  [showXAxisLabel]="true"
+  [xAxisLabel]="'Nombre de langues'"
+  [yAxis]="true"
+  [showYAxisLabel]="true"
+  [yAxisLabel]="'Nombre de pays'"
+  [legend]="true"
+  [legendTitle]="'Pays par nombre de langues'"
 >
 </ngx-charts-bar-vertical>

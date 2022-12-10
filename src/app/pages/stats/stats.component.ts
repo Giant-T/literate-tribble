@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CountriesPerContinent } from 'src/app/models/countries-per-continent';
+import { Stats } from '../../models/Stats';
 import { StatsService } from 'src/app/services/stats.service';
 
 @Component({
@@ -8,17 +8,25 @@ import { StatsService } from 'src/app/services/stats.service';
   styleUrls: ['./stats.component.css'],
 })
 export class StatsComponent {
-  countriesPerContinent: CountriesPerContinent[] = [];
+  countriesPerContinent: Stats[] = [];
+  countriesPerLanguages: Stats[] = [];
 
   constructor(private statsService: StatsService) {}
 
   ngOnInit(): void {
     this.getCountriesPerContinent();
+    this.getNumberOfCountriesPerNumberOfLanguages();
   }
 
   getCountriesPerContinent(): void {
     this.statsService
       .getCountriesPerContinent()
       .subscribe((result) => (this.countriesPerContinent = result));
+  }
+
+  getNumberOfCountriesPerNumberOfLanguages(): void {
+    this.statsService
+      .getNumberOfCountriesPerNumberOfLanguages()
+      .subscribe((result) => (this.countriesPerLanguages = result));
   }
 }

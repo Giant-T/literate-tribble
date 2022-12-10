@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CountriesPerContinent } from '../models/countries-per-continent';
+import { Stats } from '../models/Stats';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +11,11 @@ export class StatsService {
 
   constructor(private http: HttpClient) {}
 
-  getCountriesPerContinent(): Observable<CountriesPerContinent[]> {
-    return this.http.get<CountriesPerContinent[]>(
-      `${this.apiUrl}/CountriesPerContinent`
-    );
+  getCountriesPerContinent(): Observable<Stats[]> {
+    return this.http.get<Stats[]>(`${this.apiUrl}/CountriesPerContinent`);
+  }
+
+  getNumberOfCountriesPerNumberOfLanguages(): Observable<Stats[]> {
+    return this.http.get<Stats[]>(`${this.apiUrl}/CountriesPerLanguages`);
   }
 }
