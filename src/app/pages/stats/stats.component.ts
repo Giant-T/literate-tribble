@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Stats } from '../../models/Stats';
+import { Stats } from '../../models/stats';
 import { StatsService } from 'src/app/services/stats.service';
 
 @Component({
