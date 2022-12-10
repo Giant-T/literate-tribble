@@ -22,6 +22,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 
+// Autres components
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,6 +40,8 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AuthorizedDisplayComponent } from './components/authorized-display/authorized-display.component';
 import { UserGuard } from './guards/user-guard';
+import { StatsComponent } from './pages/stats/stats.component';
+import { StatsService } from './services/stats.service';
 
 @NgModule({
   declarations: [
@@ -49,6 +54,7 @@ import { UserGuard } from './guards/user-guard';
     SigninComponent,
     SignupComponent,
     AuthorizedDisplayComponent,
+    StatsComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +80,7 @@ import { UserGuard } from './guards/user-guard';
     MatCheckboxModule,
     MatCardModule,
     MatMenuModule,
+    NgxChartsModule,
   ],
   providers: [
     CountryService,
@@ -81,6 +88,7 @@ import { UserGuard } from './guards/user-guard';
     FormBuilder,
     AuthService,
     UserGuard,
+    StatsService,
   ],
   bootstrap: [AppComponent],
 })

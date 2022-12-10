@@ -1,0 +1,14 @@
+<h2>Nombre de pays par continent</h2>
+<ngx-charts-bar-vertical
+    [results]="countriesPerContinent"
+    [view]="[1000,400]"
+    [xAxis]="true"
+    [showXAxisLabel]="true"
+    [xAxisLabel]="'Continent'"
+    [yAxis]="true"
+    [showYAxisLabel]="true"
+    [yAxisLabel]="'Nombre de pays'"
+    [legend]="true"
+    [legendTitle]="'Pays par continent'"
+>
+</ngx-charts-bar-vertical>

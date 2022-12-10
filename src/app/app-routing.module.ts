@@ -5,11 +5,16 @@ import { CountryAddformComponent } from './pages/country-addform/country-addform
 import { CountryListComponent } from './pages/country-list/country-list.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { StatsComponent } from './pages/stats/stats.component';
 
 const routes: Routes = [
   {
     path: 'home',
     component: CountryListComponent,
+  },
+  {
+    path: 'stats',
+    component: StatsComponent,
   },
   {
     path: 'add',
