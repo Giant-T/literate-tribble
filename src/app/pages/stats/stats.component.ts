@@ -1,21 +1,29 @@
 import { Component } from '@angular/core';
 import { Stats } from '../../models/stats';
 import { StatsService } from 'src/app/services/stats.service';
+import { animate } from '@angular/animations';
 
 @Component({
   selector: 'app-stats',
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.css'],
+  host: {
+    '(window:resize)': 'onResize($event)',
+  },
 })
 export class StatsComponent {
   countriesPerContinent: Stats[] = [];
   countriesPerLanguages: Stats[] = [];
+
+  view: [number, number] = [320, 320];
 
   constructor(private statsService: StatsService) {}
 
   ngOnInit(): void {
     this.getCountriesPerContinent();
     this.getNumberOfCountriesPerNumberOfLanguages();
+
+    this.view = [window.innerWidth * 0.75, window.innerHeight * 0.25];
   }
 
   getCountriesPerContinent(): void {
@@ -28,5 +36,10 @@ export class StatsComponent {
     this.statsService
       .getNumberOfCountriesPerNumberOfLanguages()
       .subscribe((result) => (this.countriesPerLanguages = result));
+  }
+
+  // Any seulement car je ne trouve pas le type de l'evenement 😢
+  onResize(event: any) {
+    this.view = [event.target.innerWidth * 0.75, event.target.innerHeigth * 0.25];
   }
 }

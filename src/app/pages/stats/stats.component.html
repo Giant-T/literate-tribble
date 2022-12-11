@@ -3,7 +3,7 @@
 <h3>Nombre de pays par continent</h3>
 <ngx-charts-bar-vertical
   [results]="countriesPerContinent"
-  [view]="[1000, 400]"
+  [view]="view"
   [xAxis]="true"
   [showXAxisLabel]="true"
   [xAxisLabel]="'Continent'"
@@ -18,7 +18,7 @@
 <h3>Nombre de pays par nombre de langues</h3>
 <ngx-charts-bar-vertical
   [results]="countriesPerLanguages"
-  [view]="[1000, 400]"
+  [view]="view"
   [xAxis]="true"
   [showXAxisLabel]="true"
   [xAxisLabel]="'Nombre de langues'"
