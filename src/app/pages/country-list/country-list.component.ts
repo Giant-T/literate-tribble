@@ -41,4 +41,14 @@ export class CountryListComponent {
       c.name.toUpperCase().match(this.searchTerm.toUpperCase())
     );
   }
+
+  delete(id: string): void {
+    this.countryService.deleteCountry(id).subscribe((result) => {
+      if (result.hasWorked) {
+        const index: number = this.countries.findIndex((c) => c.id == id);
+        this.countries.splice(index, 1);
+        this.getFilteredList();
+      }
+    });
+  }
 }

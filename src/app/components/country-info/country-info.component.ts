@@ -1,10 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Country } from '../../models/country';
 
 @Component({
   selector: 'app-country-info',
   templateUrl: './country-info.component.html',
-  styleUrls: ['./country-info.component.css']
+  styleUrls: ['./country-info.component.css'],
 })
 export class CountryInfoComponent {
   @Input() country: Country = {
@@ -18,10 +18,16 @@ export class CountryInfoComponent {
       name: '',
       coords: {
         lat: 0,
-        lng: 0
+        lng: 0,
       },
-      link: undefined
+      link: undefined,
     },
-    leaders: []
+    leaders: [],
   };
+
+  @Output() onDelete: EventEmitter<string> = new EventEmitter();
+
+  delete() {
+    this.onDelete.emit(this.country.id);
+  }
 }

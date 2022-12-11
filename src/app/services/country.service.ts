@@ -23,4 +23,12 @@ export class CountryService {
       }),
     });
   }
+
+  deleteCountry(id: string): Observable<{ hasWorked: boolean }> {
+    return this.http.delete<{ hasWorked: boolean }>(`${this.apiUrl}/${id}`, {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${this.authService.getToken()}`,
+      }),
+    });
+  }
 }

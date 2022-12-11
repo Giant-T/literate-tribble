@@ -42,6 +42,7 @@ import { AuthorizedDisplayComponent } from './components/authorized-display/auth
 import { UserGuard } from './guards/user-guard';
 import { StatsComponent } from './pages/stats/stats.component';
 import { StatsService } from './services/stats.service';
+import { CountryFormComponent } from './components/country-form/country-form.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { StatsService } from './services/stats.service';
     SignupComponent,
     AuthorizedDisplayComponent,
     StatsComponent,
+    CountryFormComponent,
   ],
   imports: [
     BrowserModule,

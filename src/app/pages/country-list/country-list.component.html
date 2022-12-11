@@ -13,9 +13,10 @@
   <app-country-info
     *ngFor="
       let country of filteredList
-        | slice: pageSize * pageIndex:pageSize * (pageIndex + 1)
+        | slice : pageSize * pageIndex : pageSize * (pageIndex + 1)
     "
     [country]="country"
+    (onDelete)="delete($event)"
   ></app-country-info>
 </mat-accordion>
 <mat-paginator
