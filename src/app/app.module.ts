@@ -43,6 +43,7 @@ import { UserGuard } from './guards/user-guard';
 import { StatsComponent } from './pages/stats/stats.component';
 import { StatsService } from './services/stats.service';
 import { CountryFormComponent } from './components/country-form/country-form.component';
+import { CountryUpdateformComponent } from './pages/country-updateform/country-updateform.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { CountryFormComponent } from './components/country-form/country-form.com
     AuthorizedDisplayComponent,
     StatsComponent,
     CountryFormComponent,
+    CountryUpdateformComponent,
   ],
   imports: [
     BrowserModule,

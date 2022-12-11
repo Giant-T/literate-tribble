@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserGuard } from './guards/user-guard';
 import { CountryAddformComponent } from './pages/country-addform/country-addform.component';
 import { CountryListComponent } from './pages/country-list/country-list.component';
+import { CountryUpdateformComponent } from './pages/country-updateform/country-updateform.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { StatsComponent } from './pages/stats/stats.component';
@@ -19,6 +20,11 @@ const routes: Routes = [
   {
     path: 'add',
     component: CountryAddformComponent,
+    canActivate: [UserGuard],
+  },
+  {
+    path: 'update/:id',
+    component: CountryUpdateformComponent,
     canActivate: [UserGuard],
   },
   {

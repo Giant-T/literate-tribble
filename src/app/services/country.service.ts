@@ -16,12 +16,28 @@ export class CountryService {
     return this.http.get<Country[]>(this.apiUrl);
   }
 
+  getCountriesById(id: string): Observable<Country> {
+    return this.http.get<Country>(`${this.apiUrl}/${id}`);
+  }
+
   insertCountry(country: Country): Observable<{ id: number }> {
     return this.http.post<{ id: number }>(this.apiUrl, country, {
       headers: new HttpHeaders({
         Authorization: `Bearer ${this.authService.getToken()}`,
       }),
     });
+  }
+
+  updateCountry(country: Country): Observable<{ hasWorked: boolean }> {
+    return this.http.put<{ hasWorked: boolean }>(
+      `${this.apiUrl}/${country.id}`,
+      country,
+      {
+        headers: new HttpHeaders({
+          Authorization: `Bearer ${this.authService.getToken()}`,
+        }),
+      }
+    );
   }
 
   deleteCountry(id: string): Observable<{ hasWorked: boolean }> {

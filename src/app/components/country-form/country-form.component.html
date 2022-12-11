@@ -48,7 +48,7 @@
         <mat-label>Langues</mat-label>
         <mat-chip-grid #languagesGrid formControlName="languages">
           <mat-chip-row
-            *ngFor="let language of languages; let i = index"
+            *ngFor="let language of country.languages; let i = index"
             (removed)="removeLanguage(i)"
           >
             {{ language }}
@@ -120,7 +120,6 @@
       </ng-template>
 
       <div>
-        {{ country | json }}
         <button mat-button matStepperPrevious>Retour</button>
         <button mat-button (click)="submit()">Soumettre</button>
       </div>
