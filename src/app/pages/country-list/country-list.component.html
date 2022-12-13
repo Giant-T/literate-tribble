@@ -9,8 +9,26 @@
   />
   <mat-icon matSuffix>search</mat-icon>
 </mat-form-field>
+
 <br />
-<app-continent-selector [(continent)]="continent" (onChange)="getCountries()"></app-continent-selector>
+
+<app-continent-selector
+  [(continent)]="continent"
+  (onChange)="getCountries()"
+></app-continent-selector>
+<mat-form-field appearance="outline">
+  <mat-label>Première lettre</mat-label>
+  <mat-select
+    name="firstLetter"
+    [(ngModel)]="firstLetter"
+    (ngModelChange)="getCountries()"
+  >
+    <mat-option [value]="undefined">Choisissez une lettre</mat-option>
+    <mat-option *ngFor="let letter of getAlphabet()" [value]="letter">
+      {{ letter }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
 
 <mat-accordion>
   <app-country-info

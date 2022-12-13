@@ -30,10 +30,19 @@ export class CountryListComponent {
   }
 
   getCountries(): void {
-    this.countryService.getCountries(this.continent).subscribe((result) => {
-      this.countries = result;
-      this.getFilteredList();
-    });
+    this.countryService
+      .getCountries(this.continent, this.firstLetter)
+      .subscribe((result) => {
+        this.countries = result;
+        this.getFilteredList();
+      });
+  }
+
+  // basé sur: https://plainenglish.io/blog/create-an-array-of-alphabet-characters-in-javascript-with-this-simple-trick
+  getAlphabet(): string[] {
+    let array = Array.from(Array(26)).map((x, i) => i + 65);
+    const alphabet = array.map((x) => String.fromCharCode(x));
+    return alphabet;
   }
 
   handlePageEvent(e: PageEvent): void {
