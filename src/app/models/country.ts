@@ -1,10 +1,11 @@
+import { Continents } from './continent';
 import { Leader } from './leader';
 
 export interface Country {
   id?: string;
   name: string;
   code: string;
-  continent: string;
+  continent: Continents;
   area: number;
   formattedArea?: string;
   languages: string[];

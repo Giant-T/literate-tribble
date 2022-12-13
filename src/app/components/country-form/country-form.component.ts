@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { catchError, map, Observable, of } from 'rxjs';
+import { Continents } from 'src/app/models/continent';
 import { Country } from 'src/app/models/country';
 import { CountryService } from 'src/app/services/country.service';
 import { allowedValues } from 'src/app/validators/allowedValues';
@@ -17,7 +18,7 @@ export class CountryFormComponent {
   @Input() country: Country = {
     name: '',
     code: '',
-    continent: '',
+    continent: Continents.Afrique,
     area: 1,
     languages: [],
     isNato: false,
@@ -33,7 +34,6 @@ export class CountryFormComponent {
 
   @Output() onSubmit: EventEmitter<Country> = new EventEmitter();
 
-  continents: string[] = ['Afrique', 'Asie', 'Amériques', 'Europe', 'Océanie'];
   mapLoaded: Observable<boolean>;
 
   // Groupe de formulaire pour le pays
@@ -54,9 +54,9 @@ export class CountryFormComponent {
         Validators.pattern(/^[A-Z]{3}$/),
       ])
     ),
-    continent: new FormControl(
-      '',
-      Validators.compose([Validators.required, allowedValues(this.continents)])
+    continent: new FormControl<Continents>(
+      Continents.Afrique,
+      Validators.required
     ),
     area: new FormControl(
       1,
@@ -90,6 +90,10 @@ export class CountryFormComponent {
     if (!this.countryFormGroup.valid || !this.capitalFormGroup.valid) return;
 
     this.onSubmit.emit(this.country);
+  }
+
+  getContinents(): string[] {
+    return Object.values(Continents);
   }
 
   addLanguage(event: MatChipInputEvent): void {

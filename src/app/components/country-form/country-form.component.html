@@ -72,7 +72,7 @@
           formControlName="continent"
           [(ngModel)]="country.continent"
         >
-          <mat-option *ngFor="let continent of continents" [value]="continent">
+          <mat-option *ngFor="let continent of getContinents()" [value]="continent">
             {{ continent }}
           </mat-option>
         </mat-select>

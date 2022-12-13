@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Continents } from '../models/continent';
 import { Country } from '../models/country';
 import { AuthService } from './auth.service';
 
@@ -12,7 +13,7 @@ export class CountryService {
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-  getCountries(): Observable<Country[]> {
+  getCountries(continent?: Continents, startingLetter?: string): Observable<Country[]> {
     return this.http.get<Country[]>(this.apiUrl);
   }
 
