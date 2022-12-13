@@ -44,6 +44,7 @@ import { StatsComponent } from './pages/stats/stats.component';
 import { StatsService } from './services/stats.service';
 import { CountryFormComponent } from './components/country-form/country-form.component';
 import { CountryUpdateformComponent } from './pages/country-updateform/country-updateform.component';
+import { ContinentSelectorComponent } from './components/continent-selector/continent-selector.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { CountryUpdateformComponent } from './pages/country-updateform/country-u
     StatsComponent,
     CountryFormComponent,
     CountryUpdateformComponent,
+    ContinentSelectorComponent,
   ],
   imports: [
     BrowserModule,

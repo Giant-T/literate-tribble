@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Continent } from 'src/app/models/continent';
 import { Country } from '../../models/country';
 import { CountryService } from '../../services/country.service';
 
@@ -13,6 +14,10 @@ export class CountryListComponent {
   filteredList: Country[] = [];
   countries: Country[] = [];
 
+  // filtres
+  continent?: Continent;
+  firstLetter?: string;
+
   // Variable pour le paginator
   pageSize: number = 10;
   pageIndex: number = 0;
@@ -25,7 +30,7 @@ export class CountryListComponent {
   }
 
   getCountries(): void {
-    this.countryService.getCountries().subscribe((result) => {
+    this.countryService.getCountries(this.continent).subscribe((result) => {
       this.countries = result;
       this.getFilteredList();
     });

@@ -9,6 +9,9 @@
   />
   <mat-icon matSuffix>search</mat-icon>
 </mat-form-field>
+<br />
+<app-continent-selector [(continent)]="continent" (onChange)="getCountries()"></app-continent-selector>
+
 <mat-accordion>
   <app-country-info
     *ngFor="
@@ -17,7 +20,8 @@
     "
     [country]="country"
     (onDelete)="delete($event)"
-  ></app-country-info>
+  >
+  </app-country-info>
 </mat-accordion>
 <mat-paginator
   [length]="filteredList.length"

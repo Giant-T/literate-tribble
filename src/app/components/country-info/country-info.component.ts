@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Continents } from 'src/app/models/continent';
+import { Continent } from 'src/app/models/continent';
 import { Country } from '../../models/country';
 
 @Component({
@@ -11,7 +11,7 @@ export class CountryInfoComponent {
   @Input() country: Country = {
     name: '',
     code: '',
-    continent: Continents.Afrique,
+    continent: Continent.Afrique,
     area: 0,
     languages: [],
     isNato: false,

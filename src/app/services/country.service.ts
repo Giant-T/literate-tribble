@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Continents } from '../models/continent';
+import { Continent } from '../models/continent';
 import { Country } from '../models/country';
 import { AuthService } from './auth.service';
 
@@ -13,8 +13,25 @@ export class CountryService {
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
-  getCountries(continent?: Continents, startingLetter?: string): Observable<Country[]> {
-    return this.http.get<Country[]>(this.apiUrl);
+  getCountries(
+    continent?: Continent,
+    startingLetter?: string
+  ): Observable<Country[]> {
+    let url: string = this.apiUrl;
+
+    if (continent || startingLetter) {
+      let params: string[] = [];
+      if (continent) {
+        params.push(`continent=${continent}`);
+      }
+      if (startingLetter) {
+        params.push(`startingLetter=${startingLetter}`);
+      }
+
+      url += `?${params.join('&')}`;
+    }
+
+    return this.http.get<Country[]>(url);
   }
 
   getCountriesById(id: string): Observable<Country> {

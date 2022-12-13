@@ -1,9 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { catchError, map, Observable, of } from 'rxjs';
-import { Continents } from 'src/app/models/continent';
+import { Continent } from 'src/app/models/continent';
 import { Country } from 'src/app/models/country';
 import { CountryService } from 'src/app/services/country.service';
 import { allowedValues } from 'src/app/validators/allowedValues';
@@ -15,10 +21,10 @@ import { allowedValues } from 'src/app/validators/allowedValues';
 })
 export class CountryFormComponent {
   @Input() title: string = '';
-  @Input() country: Country = {
+  private _country: Country = {
     name: '',
     code: '',
-    continent: Continents.Afrique,
+    continent: Continent.Afrique,
     area: 1,
     languages: [],
     isNato: false,
@@ -31,6 +37,18 @@ export class CountryFormComponent {
     },
     leaders: [],
   };
+
+  @Input() set country(country: Country) {
+    this._country = country;
+    this._country.languages.forEach((language) =>
+      this.countryFormGroup.controls.languages.value?.push(language)
+    );
+    this.countryFormGroup.controls.languages.updateValueAndValidity();
+  }
+
+  get country(): Country {
+    return this._country;
+  }
 
   @Output() onSubmit: EventEmitter<Country> = new EventEmitter();
 
@@ -53,10 +71,6 @@ export class CountryFormComponent {
         Validators.required,
         Validators.pattern(/^[A-Z]{3}$/),
       ])
-    ),
-    continent: new FormControl<Continents>(
-      Continents.Afrique,
-      Validators.required
     ),
     area: new FormControl(
       1,
@@ -93,7 +107,7 @@ export class CountryFormComponent {
   }
 
   getContinents(): string[] {
-    return Object.values(Continents);
+    return Object.values(Continent);
   }
 
   addLanguage(event: MatChipInputEvent): void {

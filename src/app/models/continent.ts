@@ -1,4 +1,4 @@
-export enum Continents {
+export enum Continent {
   Afrique = 'Afrique',
   Asie = 'Asie',
   Ameriques = 'Amériques',

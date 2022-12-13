@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Continents } from 'src/app/models/continent';
+import { Continent } from 'src/app/models/continent';
 import { Country } from 'src/app/models/country';
 import { CountryService } from 'src/app/services/country.service';
 
@@ -13,7 +13,7 @@ export class CountryUpdateformComponent {
   country: Country = {
     name: '',
     code: '',
-    continent: Continents.Afrique,
+    continent: Continent.Afrique,
     area: 0,
     languages: [],
     isNato: false,

@@ -65,18 +65,10 @@
         </mat-chip-grid>
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Continent</mat-label>
-        <mat-select
-          name="continent"
-          formControlName="continent"
-          [(ngModel)]="country.continent"
-        >
-          <mat-option *ngFor="let continent of getContinents()" [value]="continent">
-            {{ continent }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <app-continent-selector
+        [(continent)]="country.continent"
+        [required]="true"
+      ></app-continent-selector>
 
       <mat-checkbox formControlName="isNato">
         Fait partie de l'OTAN
