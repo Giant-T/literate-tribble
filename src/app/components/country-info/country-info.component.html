@@ -39,6 +39,13 @@
       <ng-template #noLeaders>
         Il n'y a aucun dirigeant dans la base de données.
       </ng-template>
+      <app-authorized-display>
+        <mat-action-row>
+          <a mat-icon-button [routerLink]="['/add-leader']">
+            <mat-icon>add</mat-icon>
+          </a>
+        </mat-action-row>
+      </app-authorized-display>
     </mat-expansion-panel>
   </mat-accordion>
   <mat-action-row>

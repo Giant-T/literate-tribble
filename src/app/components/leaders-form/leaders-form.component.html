@@ -1,0 +1,53 @@
+<h1>{{ title }}</h1>
+
+<form (ngSubmit)="submit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Nom</mat-label>
+    <input
+      matInput
+      required
+      name="name"
+      type="text"
+      [(ngModel)]="leader.name"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Sexe</mat-label>
+    <input matInput required name="sex" type="text" [(ngModel)]="leader.sex" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Parti politique</mat-label>
+    <input
+      matInput
+      required
+      name="politicalParty"
+      type="text"
+      [(ngModel)]="leader.politicalParty"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Intervalle au pouvoir</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input
+        matStartDate
+        name="dateStart"
+        [(ngModel)]="leader.dateStart"
+        placeholder="Date de début"
+      />
+      <input
+        matEndDate
+        name="dateEnd"
+        [(ngModel)]="leader.dateEnd"
+        placeholder="Date de fin"
+      />
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+  <br />
+  <button mat-raised-button type="submit" color="primary">Soumettre</button>
+</form>

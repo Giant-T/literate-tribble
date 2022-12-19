@@ -21,6 +21,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 // Autres components
 import { NgxChartsModule } from '@swimlane/ngx-charts';
@@ -45,6 +47,8 @@ import { StatsService } from './services/stats.service';
 import { CountryFormComponent } from './components/country-form/country-form.component';
 import { CountryUpdateformComponent } from './pages/country-updateform/country-updateform.component';
 import { ContinentSelectorComponent } from './components/continent-selector/continent-selector.component';
+import { LeadersFormComponent } from './components/leaders-form/leaders-form.component';
+import { LeadersAddformComponent } from './pages/leaders-addform/leaders-addform.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +65,8 @@ import { ContinentSelectorComponent } from './components/continent-selector/cont
     CountryFormComponent,
     CountryUpdateformComponent,
     ContinentSelectorComponent,
+    LeadersFormComponent,
+    LeadersAddformComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,6 +93,8 @@ import { ContinentSelectorComponent } from './components/continent-selector/cont
     MatCardModule,
     MatMenuModule,
     NgxChartsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [
     CountryService,
@@ -95,6 +103,7 @@ import { ContinentSelectorComponent } from './components/continent-selector/cont
     AuthService,
     UserGuard,
     StatsService,
+    MatNativeDateModule,
   ],
   bootstrap: [AppComponent],
 })

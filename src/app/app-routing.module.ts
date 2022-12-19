@@ -4,6 +4,7 @@ import { UserGuard } from './guards/user-guard';
 import { CountryAddformComponent } from './pages/country-addform/country-addform.component';
 import { CountryListComponent } from './pages/country-list/country-list.component';
 import { CountryUpdateformComponent } from './pages/country-updateform/country-updateform.component';
+import { LeadersAddformComponent } from './pages/leaders-addform/leaders-addform.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { StatsComponent } from './pages/stats/stats.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
     path: 'update/:id',
     component: CountryUpdateformComponent,
     canActivate: [UserGuard],
+  },
+  {
+    path: 'add-leader/:id',
+    component: LeadersAddformComponent,
   },
   {
     path: 'sign-in',
