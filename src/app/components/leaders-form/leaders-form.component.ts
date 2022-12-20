@@ -50,8 +50,6 @@ export class LeadersFormComponent {
       politicalParty: this.leaderFormGroup.controls.politicalParty.value!,
     };
 
-    console.log(leader);
-
     this.onSubmit.emit(leader);
   }
 }
