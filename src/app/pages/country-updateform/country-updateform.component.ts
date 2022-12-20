@@ -30,7 +30,7 @@ export class CountryUpdateformComponent {
   constructor(
     private router: Router,
     private countryService: CountryService,
-    private activateRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +38,7 @@ export class CountryUpdateformComponent {
   }
 
   getCountryInformation(): void {
-    const id = this.activateRoute.snapshot.paramMap.get('id');
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
 
     if (id) {
       this.countryService

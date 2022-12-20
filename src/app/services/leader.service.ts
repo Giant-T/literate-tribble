@@ -15,7 +15,7 @@ export class LeaderService {
   insertLeader(leader: Leader): Observable<{}> {
     return this.http.post(this.apiUrl, leader, {
       headers: new HttpHeaders({
-        Authorization: `Bearer ${this.authService.getToken}`,
+        Authorization: `Bearer ${this.authService.getToken()}`,
       }),
     });
   }

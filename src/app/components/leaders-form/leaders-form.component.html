@@ -1,6 +1,6 @@
 <h1>{{ title }}</h1>
 
-<form (ngSubmit)="submit()">
+<form (submit)="submit()" [formGroup]="leaderFormGroup">
   <mat-form-field appearance="outline">
     <mat-label>Nom</mat-label>
     <input
@@ -8,13 +8,19 @@
       required
       name="name"
       type="text"
-      [(ngModel)]="leader.name"
+      formControlName="name"
     />
   </mat-form-field>
 
   <mat-form-field appearance="outline">
     <mat-label>Sexe</mat-label>
-    <input matInput required name="sex" type="text" [(ngModel)]="leader.sex" />
+    <input
+      matInput
+      required
+      name="sex"
+      type="text"
+      formControlName="sex"
+    />
   </mat-form-field>
 
   <mat-form-field appearance="outline">
@@ -24,7 +30,7 @@
       required
       name="politicalParty"
       type="text"
-      [(ngModel)]="leader.politicalParty"
+      formControlName="politicalParty"
     />
   </mat-form-field>
 
@@ -34,13 +40,13 @@
       <input
         matStartDate
         name="dateStart"
-        [(ngModel)]="leader.dateStart"
+        formControlName="dateStart"
         placeholder="Date de début"
       />
       <input
         matEndDate
         name="dateEnd"
-        [(ngModel)]="leader.dateEnd"
+        formControlName="dateEnd"
         placeholder="Date de fin"
       />
     </mat-date-range-input>

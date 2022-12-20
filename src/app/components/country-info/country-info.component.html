@@ -41,7 +41,7 @@
       </ng-template>
       <app-authorized-display>
         <mat-action-row>
-          <a mat-icon-button [routerLink]="['/add-leader']">
+          <a mat-icon-button [routerLink]="['/add-leader', country.id]">
             <mat-icon>add</mat-icon>
           </a>
         </mat-action-row>
@@ -49,11 +49,13 @@
     </mat-expansion-panel>
   </mat-accordion>
   <mat-action-row>
-    <button mat-icon-button (click)="delete()">
-      <mat-icon>delete</mat-icon>
-    </button>
-    <a mat-icon-button [routerLink]="['/update', country.id]">
-      <mat-icon>edit</mat-icon>
-    </a>
+    <app-authorized-display>
+      <button mat-icon-button (click)="delete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <a mat-icon-button [routerLink]="['/update', country.id]">
+        <mat-icon>edit</mat-icon>
+      </a>
+    </app-authorized-display>
   </mat-action-row>
 </mat-expansion-panel>
