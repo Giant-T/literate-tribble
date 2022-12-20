@@ -12,20 +12,20 @@
       <mat-divider></mat-divider>
     </mat-nav-list>
     <mat-nav-list (click)="sidenav.toggle()">
-      <a mat-button routerLink="/home">
+      <a mat-button routerLink="/home" i18n>
         <mat-icon>home</mat-icon>
         Accueil
       </a>
     </mat-nav-list>
     <mat-nav-list>
-      <a mat-button routerLink="/stats">
+      <a mat-button routerLink="/stats" i18n>
         <mat-icon>bar_chart</mat-icon>
         Statistiques
       </a>
     </mat-nav-list>
     <app-authorized-display>
       <mat-nav-list (click)="sidenav.toggle()">
-        <a mat-button routerLink="/add">
+        <a mat-button routerLink="/add" i18n>
           <mat-icon>description</mat-icon>
           Ajout de pays
         </a>
@@ -45,11 +45,11 @@
         </button>
         <mat-menu #menu="matMenu">
           <app-authorized-display [hideWhenAuthenticated]="true">
-            <a mat-button routerLink="sign-in">Connexion</a>
-            <a mat-button routerLink="sign-up">Inscription</a>
+            <a mat-button routerLink="sign-in" i18n>Connexion</a>
+            <a mat-button routerLink="sign-up" i18n>Inscription</a>
           </app-authorized-display>
           <app-authorized-display>
-            <a mat-button (click)="disconnect()">Déconnexion</a>
+            <a mat-button (click)="disconnect()" i18n>Déconnexion</a>
           </app-authorized-display>
         </mat-menu>
       </mat-toolbar-row>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr-CA" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="6252958452340857251" datatype="html">
+        <source>Continent</source>
+        <target>Continent</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/continent-selector/continent-selector.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/stats/stats.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1984088277496309799" datatype="html">
+        <source>Choisissez un continent...</source>
+        <target>Choose a continent...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/continent-selector/continent-selector.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1932590156143251009" datatype="html">
+        <source>Entrez les informations du pays</source>
+        <target>Enter the country's informations</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5363451304863092478" datatype="html">
+        <source>Nom</source>
+        <target>Name</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/leaders-form/leaders-form.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8186013988289067040" datatype="html">
+        <source>Code</source>
+        <target>Code</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8913743292902574040" datatype="html">
+        <source>Superficie</source>
+        <target>Area</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8902029436332253262" datatype="html">
+        <source>Langues</source>
+        <target>Languages</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1109262582217455348" datatype="html">
+        <source> Fait partie de l&apos;OTAN </source>
+        <target> Is part of NATO </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">71,72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="769202663015299733" datatype="html">
+        <source>Prochaine étape</source>
+        <target>Next step</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4919838706876720618" datatype="html">
+        <source>Entrez les informations de la capitale</source>
+        <target>Enter the capital's informations</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1273741133261241814" datatype="html">
+        <source>Coordonnées (cliquez sur la carte pour changer la position):</source>
+        <target>Coordinates (click on the map to change the position):</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8168765646794661881" datatype="html">
+        <source>Retour</source>
+        <target>Back</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6255671880111620823" datatype="html">
+        <source>Soumettre</source>
+        <target>Submit</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-form/country-form.component.html</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/leaders-form/leaders-form.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signin/signin.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7551789491948385678" datatype="html">
+        <source> Ce pays fait partie de l&apos;OTAN. </source>
+        <target> This country if part of NATO. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-info/country-info.component.html</context>
+          <context context-type="linenumber">8,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8495114527171089583" datatype="html">
+        <source>Ce pays ne fait pas partie de l&apos;OTAN.</source>
+        <target>This country is not part of NATO.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-info/country-info.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7370077988797373393" datatype="html">
+        <source>Continent: <x id="INTERPOLATION" equiv-text="{{ country.continent }}"/></source>
+        <target>Continent: <x id="INTERPOLATION" equiv-text="{{ country.continent }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-info/country-info.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5075141806788986833" datatype="html">
+        <source>Langues:</source>
+        <target>Languages:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-info/country-info.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="798203716107740687" datatype="html">
+        <source>Nom: <x id="INTERPOLATION" equiv-text="{{ country.capital.name }}"/></source>
+        <target>Name: <x id="INTERPOLATION" equiv-text="{{ country.capital.name }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-info/country-info.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4965177753556917118" datatype="html">
+        <source>Coordonnées: <x id="INTERPOLATION" equiv-text="{{ country.capital.coords | coords }}"/></source>
+        <target>Coordinates: <x id="INTERPOLATION" equiv-text="{{ country.capital.coords | coords }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-info/country-info.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2797960643821006411" datatype="html">
+        <source> Il n&apos;y a aucun dirigeant dans la base de données. </source>
+        <target> There are no leaders in the database. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/country-info/country-info.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1255217272611283250" datatype="html">
+        <source>Sexe</source>
+        <target>Sex</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/leaders-form/leaders-form.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7905252007132224455" datatype="html">
+        <source>Parti politique</source>
+        <target>Political party</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/leaders-form/leaders-form.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6011913889099890751" datatype="html">
+        <source>Intervalle au pouvoir</source>
+        <target>Interval in power</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/leaders-form/leaders-form.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1676572549577028850" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>home<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Accueil </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>home<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Home </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5887807552403342241" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>bar_chart<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Statistiques </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>bar_chart<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Statistics </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">22,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6741999551910837761" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>description<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Ajout de pays </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>description<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Add a country </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">29,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6103118278620987967" datatype="html">
+        <source>Connexion</source>
+        <target>Log in</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6474835368012891360" datatype="html">
+        <source>Inscription</source>
+        <target>Sign up</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6446192435648820310" datatype="html">
+        <source>Déconnexion</source>
+        <target>Disconnect</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3227438424431888808" datatype="html">
+        <source>Liste des pays</source>
+        <target>Country list</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/country-list/country-list.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5829380065548494521" datatype="html">
+        <source>Rechercher</source>
+        <target>Search</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/country-list/country-list.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3598656100468074062" datatype="html">
+        <source>Première lettre</source>
+        <target>First letter</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/country-list/country-list.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9026521931194995404" datatype="html">
+        <source>Choisissez une lettre</source>
+        <target>Choose a letter</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/country-list/country-list.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3423789044007720007" datatype="html">
+        <source>Formulaire de modification de pays</source>
+        <target>Country editing form</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/country-updateform/country-updateform.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1913358852172931363" datatype="html">
+        <source>Formulaire d&apos;ajout de pays</source>
+        <target>Country addition form</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/leaders-addform/leaders-addform.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7919452934138804929" datatype="html">
+        <source>Se connecter</source>
+        <target>Log in</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signin/signin.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5249891717669571568" datatype="html">
+        <source>Mot de passe</source>
+        <target>Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signin/signin.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4524516638244876783" datatype="html">
+        <source>S&apos;inscrire</source>
+        <target>Sign up</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8268021232951468752" datatype="html">
+        <source>Courriel</source>
+        <target>Email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/signup/signup.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8380024843606106539" datatype="html">
+        <source>Nombre de pays par continent</source>
+        <target>Number of countries per continent</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/stats/stats.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4229202219493466239" datatype="html">
+        <source>Nombre de pays</source>
+        <target>Number of countries</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/stats/stats.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/stats/stats.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1256209718424628505" datatype="html">
+        <source>Pays par continent</source>
+        <target>Countries per continent</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/stats/stats.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7852266523215718941" datatype="html">
+        <source>Nombre de pays par nombre de langues</source>
+        <target>Number of countries per number of languages</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/stats/stats.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6049980242818012374" datatype="html">
+        <source>Nombre de langues</source>
+        <target>Number of languages</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/stats/stats.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4316800038713850456" datatype="html">
+        <source>Pays par nombre de langues</source>
+        <target>Countries per number of languages</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/stats/stats.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

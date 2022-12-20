@@ -1,10 +1,11 @@
-<h1>Liste des pays</h1>
+<h1 i18n>Liste des pays</h1>
 <mat-form-field appearance="outline">
   <input
     matInput
     type="search"
     [(ngModel)]="searchTerm"
     (ngModelChange)="getFilteredList()"
+    i18n-placeholder
     placeholder="Rechercher"
   />
   <mat-icon matSuffix>search</mat-icon>
@@ -17,13 +18,13 @@
   (onChange)="getCountries()"
 ></app-continent-selector>
 <mat-form-field appearance="outline">
-  <mat-label>Première lettre</mat-label>
+  <mat-label i18n>Première lettre</mat-label>
   <mat-select
     name="firstLetter"
     [(ngModel)]="firstLetter"
     (ngModelChange)="getCountries()"
   >
-    <mat-option [value]="undefined">Choisissez une lettre</mat-option>
+    <mat-option [value]="undefined" i18n>Choisissez une lettre</mat-option>
     <mat-option *ngFor="let letter of getAlphabet()" [value]="letter">
       {{ letter }}
     </mat-option>

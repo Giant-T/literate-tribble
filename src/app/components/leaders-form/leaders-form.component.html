@@ -2,7 +2,7 @@
 
 <form (submit)="submit()" [formGroup]="leaderFormGroup">
   <mat-form-field appearance="outline">
-    <mat-label>Nom</mat-label>
+    <mat-label i18n>Nom</mat-label>
     <input
       matInput
       required
@@ -13,7 +13,7 @@
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Sexe</mat-label>
+    <mat-label i18n>Sexe</mat-label>
     <input
       matInput
       required
@@ -24,7 +24,7 @@
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Parti politique</mat-label>
+    <mat-label i18n>Parti politique</mat-label>
     <input
       matInput
       required
@@ -35,7 +35,7 @@
   </mat-form-field>
 
   <mat-form-field appearance="outline">
-    <mat-label>Intervalle au pouvoir</mat-label>
+    <mat-label i18n>Intervalle au pouvoir</mat-label>
     <mat-date-range-input [rangePicker]="picker">
       <input
         matStartDate
@@ -55,5 +55,5 @@
   </mat-form-field>
 
   <br />
-  <button mat-raised-button type="submit" color="primary">Soumettre</button>
+  <button mat-raised-button type="submit" color="primary" i18n>Soumettre</button>
 </form>

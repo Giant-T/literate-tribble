@@ -1,14 +1,11 @@
 <h1>{{ title }}</h1>
 
 <mat-stepper linear #stepper>
-  <mat-step
-    [stepControl]="countryFormGroup"
-    [editable]="true"
-    label="Entrez les informations du pays"
-  >
+  <mat-step [stepControl]="countryFormGroup" [editable]="true">
+    <ng-template matStepLabel i18n>Entrez les informations du pays</ng-template>
     <form [formGroup]="countryFormGroup">
       <mat-form-field appearance="outline">
-        <mat-label>Nom</mat-label>
+        <mat-label i18n>Nom</mat-label>
         <input
           matInput
           formControlName="name"
@@ -20,7 +17,7 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Code</mat-label>
+        <mat-label i18n>Code</mat-label>
         <input
           matInput
           formControlName="code"
@@ -32,7 +29,7 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="half-input">
-        <mat-label>Superficie</mat-label>
+        <mat-label i18n>Superficie</mat-label>
         <input
           matInput
           formControlName="area"
@@ -45,7 +42,7 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="half-input">
-        <mat-label>Langues</mat-label>
+        <mat-label i18n>Langues</mat-label>
         <mat-chip-grid #languagesGrid formControlName="languages">
           <mat-chip-row
             *ngFor="let language of country.languages; let i = index"
@@ -70,24 +67,23 @@
         [required]="true"
       ></app-continent-selector>
 
-      <mat-checkbox formControlName="isNato">
+      <mat-checkbox formControlName="isNato" i18n>
         Fait partie de l'OTAN
       </mat-checkbox>
 
       <div>
-        <button mat-button matStepperNext>Prochaine étape</button>
+        <button mat-button matStepperNext i18n>Prochaine étape</button>
       </div>
     </form>
   </mat-step>
 
-  <mat-step
-    [stepControl]="capitalFormGroup"
-    [editable]="true"
-    label="Entrez les informations de la capitale"
-  >
+  <mat-step [stepControl]="capitalFormGroup" [editable]="true">
+    <ng-template matStepLabel i18n
+      >Entrez les informations de la capitale</ng-template
+    >
     <form [formGroup]="capitalFormGroup">
       <mat-form-field appearance="outline">
-        <mat-label>Nom</mat-label>
+        <mat-label i18n>Nom</mat-label>
         <input
           matInput
           formControlName="name"
@@ -99,7 +95,7 @@
       </mat-form-field>
 
       <h4>
-        Coordonnées (cliquez sur la carte pour changer la position):
+        <span i18n>Coordonnées (cliquez sur la carte pour changer la position):</span>
         {{ country.capital.coords | coords }}
       </h4>
       <ng-template ngIf="mapLoaded | async">
@@ -112,8 +108,8 @@
       </ng-template>
 
       <div>
-        <button mat-button matStepperPrevious>Retour</button>
-        <button mat-button (click)="submit()">Soumettre</button>
+        <button mat-button matStepperPrevious i18n>Retour</button>
+        <button mat-button (click)="submit()" i18n>Soumettre</button>
       </div>
     </form>
   </mat-step>
