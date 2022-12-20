@@ -27,6 +27,8 @@ export class SigninComponent {
   ) {}
 
   signIn(): void {
+    if (!this.formGroup.valid) return;
+
     this.authService.signin(this.email, this.password);
 
     this.router.navigate(['home']);

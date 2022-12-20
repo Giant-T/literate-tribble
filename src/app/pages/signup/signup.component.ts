@@ -27,6 +27,8 @@ export class SignupComponent {
   ) {}
 
   signUp(): void {
+    if (!this.formGroup.valid) return;
+
     this.authService.signup(this.email, this.password);
     this.router.navigate(['home']);
   }
