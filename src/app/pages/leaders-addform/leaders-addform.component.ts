@@ -25,7 +25,6 @@ export class LeadersAddformComponent {
   insertLeader(leader: Leader): void {
     this.leaderService.insertLeader(leader).subscribe((result) => {
       this.router.navigate(['/home']);
-      console.log(result);
     });
   }
 }
