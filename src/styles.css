@@ -1,4 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.center {
+  align-items: center;
+}
+
+.flex > * {
+  padding: 0.5em;
+}
+
+.mat-mdc-paginator-range-label {
+  white-space: nowrap;
+}

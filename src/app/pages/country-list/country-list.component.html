@@ -1,0 +1,53 @@
+<h1 i18n>Liste des pays</h1>
+<mat-form-field appearance="outline">
+  <input
+    matInput
+    type="search"
+    [(ngModel)]="searchTerm"
+    (ngModelChange)="getFilteredList()"
+    i18n-placeholder
+    placeholder="Rechercher"
+  />
+  <mat-icon matSuffix>search</mat-icon>
+</mat-form-field>
+
+<br />
+
+<app-continent-selector
+  [(continent)]="continent"
+  (onChange)="getCountries()"
+></app-continent-selector>
+<mat-form-field appearance="outline">
+  <mat-label i18n>Première lettre</mat-label>
+  <mat-select
+    name="firstLetter"
+    [(ngModel)]="firstLetter"
+    (ngModelChange)="getCountries()"
+  >
+    <mat-option [value]="undefined" i18n>Choisissez une lettre</mat-option>
+    <mat-option *ngFor="let letter of getAlphabet()" [value]="letter">
+      {{ letter }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-accordion>
+  <app-country-info
+    *ngFor="
+      let country of filteredList
+        | slice : pageSize * pageIndex : pageSize * (pageIndex + 1)
+    "
+    [country]="country"
+    (onDelete)="delete($event)"
+  >
+  </app-country-info>
+</mat-accordion>
+<mat-paginator
+  [length]="filteredList.length"
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="handlePageEvent($event)"
+  showFirstLastButtons="true"
+>
+</mat-paginator>

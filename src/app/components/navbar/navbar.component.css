@@ -1,0 +1,28 @@
+.navbar-spacer {
+  flex: 1 1 auto;
+}
+
+mat-sidenav {
+  padding: 0 1em;
+}
+
+mat-nav-list > a {
+  width: 100%;
+  text-decoration: none;
+  text-align: left;
+}
+
+mat-nav-list a * {
+  margin-left: 0.5em;
+  position: absolute;
+  left: 0px;
+}
+
+a {
+  width: 100%;
+  text-decoration: none;
+}
+
+mat-menu {
+  padding: 0.5em;
+}

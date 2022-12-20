@@ -1,0 +1,59 @@
+<h1>{{ title }}</h1>
+
+<form (submit)="submit()" [formGroup]="leaderFormGroup">
+  <mat-form-field appearance="outline">
+    <mat-label i18n>Nom</mat-label>
+    <input
+      matInput
+      required
+      name="name"
+      type="text"
+      formControlName="name"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label i18n>Sexe</mat-label>
+    <input
+      matInput
+      required
+      name="sex"
+      type="text"
+      formControlName="sex"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label i18n>Parti politique</mat-label>
+    <input
+      matInput
+      required
+      name="politicalParty"
+      type="text"
+      formControlName="politicalParty"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label i18n>Intervalle au pouvoir</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input
+        matStartDate
+        name="dateStart"
+        formControlName="dateStart"
+        placeholder="Date de début"
+      />
+      <input
+        matEndDate
+        name="dateEnd"
+        formControlName="dateEnd"
+        placeholder="Date de fin"
+      />
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+
+  <br />
+  <button mat-raised-button type="submit" color="primary" i18n>Soumettre</button>
+</form>

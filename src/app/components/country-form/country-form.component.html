@@ -1,0 +1,116 @@
+<h1>{{ title }}</h1>
+
+<mat-stepper linear #stepper>
+  <mat-step [stepControl]="countryFormGroup" [editable]="true">
+    <ng-template matStepLabel i18n>Entrez les informations du pays</ng-template>
+    <form [formGroup]="countryFormGroup">
+      <mat-form-field appearance="outline">
+        <mat-label i18n>Nom</mat-label>
+        <input
+          matInput
+          formControlName="name"
+          name="name"
+          type="text"
+          placeholder="Nom du pays"
+          [(ngModel)]="country.name"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label i18n>Code</mat-label>
+        <input
+          matInput
+          formControlName="code"
+          name="code"
+          type="text"
+          placeholder="Code du pays"
+          [(ngModel)]="country.code"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-input">
+        <mat-label i18n>Superficie</mat-label>
+        <input
+          matInput
+          formControlName="area"
+          name="area"
+          type="number"
+          placeholder="Superficie du pays"
+          [(ngModel)]="country.area"
+        />
+        <span matTextSuffix>km²</span>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-input">
+        <mat-label i18n>Langues</mat-label>
+        <mat-chip-grid #languagesGrid formControlName="languages">
+          <mat-chip-row
+            *ngFor="let language of country.languages; let i = index"
+            (removed)="removeLanguage(i)"
+          >
+            {{ language }}
+            <button matChipRemove aria-label="'remove' + language">
+              <mat-icon>cancel</mat-icon>
+            </button>
+          </mat-chip-row>
+          <input
+            name="languages"
+            placeholder="Nouvelle langue..."
+            [matChipInputFor]="languagesGrid"
+            (matChipInputTokenEnd)="addLanguage($event)"
+          />
+        </mat-chip-grid>
+      </mat-form-field>
+
+      <app-continent-selector
+        [(continent)]="country.continent"
+        [required]="true"
+      ></app-continent-selector>
+
+      <mat-checkbox formControlName="isNato" i18n>
+        Fait partie de l'OTAN
+      </mat-checkbox>
+
+      <div>
+        <button mat-button matStepperNext i18n>Prochaine étape</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="capitalFormGroup" [editable]="true">
+    <ng-template matStepLabel i18n
+      >Entrez les informations de la capitale</ng-template
+    >
+    <form [formGroup]="capitalFormGroup">
+      <mat-form-field appearance="outline">
+        <mat-label i18n>Nom</mat-label>
+        <input
+          matInput
+          formControlName="name"
+          name="capitalName"
+          type="text"
+          placeholder="Nom de la capitale"
+          [(ngModel)]="country.capital.name"
+        />
+      </mat-form-field>
+
+      <h4>
+        <span i18n>Coordonnées (cliquez sur la carte pour changer la position):</span>
+        {{ country.capital.coords | coords }}
+      </h4>
+      <ng-template ngIf="mapLoaded | async">
+        <google-map [zoom]="1" (mapClick)="mapClick($event)">
+          <map-marker
+            [position]="country.capital.coords"
+            label="capitale"
+          ></map-marker>
+        </google-map>
+      </ng-template>
+
+      <div>
+        <button mat-button matStepperPrevious i18n>Retour</button>
+        <button mat-button (click)="submit()" i18n>Soumettre</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-stepper>

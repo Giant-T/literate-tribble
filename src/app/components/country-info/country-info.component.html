@@ -1,0 +1,63 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title> {{ country.name }} | {{ country.code }} </mat-panel-title>
+    <mat-panel-description>
+      {{ country.formattedArea }}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <p *ngIf="country.isNato; else notNato" i18n>
+    Ce pays fait partie de l'OTAN.
+  </p>
+  <ng-template #notNato i18n>Ce pays ne fait pas partie de l'OTAN.</ng-template>
+  <p i18n>Continent: {{ country.continent }}</p>
+  <p i18n>Langues:</p>
+  <ul>
+    <li *ngFor="let langage of country.languages">{{ langage }}</li>
+  </ul>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Capitale </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p i18n>Nom: {{ country.capital.name }}</p>
+      <p i18n>Coordonnées: {{ country.capital.coords | coords }}</p>
+      <mat-action-row>
+        <a mat-icon-button href="{{ country.capital.link }}" target="_blank">
+          <mat-icon>open_in_new</mat-icon>
+        </a>
+      </mat-action-row>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> Historique des dirigeants </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div *ngIf="country.leaders.length > 0; else noLeaders">
+        <ul>
+          <li *ngFor="let leader of country.leaders">
+            {{ leader.name }}
+          </li>
+        </ul>
+      </div>
+      <ng-template #noLeaders i18n>
+        Il n'y a aucun dirigeant dans la base de données.
+      </ng-template>
+      <app-authorized-display>
+        <mat-action-row>
+          <a mat-icon-button [routerLink]="['/add-leader', country.id]">
+            <mat-icon>add</mat-icon>
+          </a>
+        </mat-action-row>
+      </app-authorized-display>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-action-row>
+    <app-authorized-display>
+      <button mat-icon-button (click)="delete()">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <a mat-icon-button [routerLink]="['/update', country.id]">
+        <mat-icon>edit</mat-icon>
+      </a>
+    </app-authorized-display>
+  </mat-action-row>
+</mat-expansion-panel>

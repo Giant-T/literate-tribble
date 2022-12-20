@@ -1,0 +1,9 @@
+<mat-form-field appearance="outline">
+  <mat-label i18n>Continent</mat-label>
+  <mat-select name="continent" [(ngModel)]="continent" [required]="required" (ngModelChange)="updateContinent()">
+    <mat-option [value]="undefined" i18n>Choisissez un continent...</mat-option>
+    <mat-option *ngFor="let continent of getContinents()" [value]="continent">
+      {{ continent }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
