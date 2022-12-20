@@ -19,7 +19,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "localize": ["en-US"],
+            "localize": ["fr-CA"],
             "outputPath": "dist/literate-tribble",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -34,8 +34,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "900kb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",

@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { getBaseUrl } from '../config/baseUrl';
 import { Stats } from '../models/stats';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StatsService {
-  private apiUrl: string = 'https://localhost:7033/api/stats';
+  private apiUrl: string = getBaseUrl() + 'stats';
 
   constructor(private http: HttpClient) {}
 

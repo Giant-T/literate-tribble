@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { getBaseUrl } from '../config/baseUrl';
 import { Leader } from '../models/leader';
 import { AuthService } from './auth.service';
 
@@ -8,7 +9,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class LeaderService {
-  private apiUrl: string = 'https://localhost:7033/api/Leaders';
+  private apiUrl: string = getBaseUrl() + 'Leaders';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

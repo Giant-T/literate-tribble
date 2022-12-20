@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { getBaseUrl } from '../config/baseUrl';
 import { Continent } from '../models/continent';
 import { Country } from '../models/country';
 import { AuthService } from './auth.service';
@@ -9,7 +10,7 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class CountryService {
-  private apiUrl: string = 'https://localhost:7033/api/countries';
+  private apiUrl: string = getBaseUrl() + 'countries';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 
